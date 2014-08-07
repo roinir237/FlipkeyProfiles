@@ -40,6 +40,7 @@ rules = {
 mapper = PageMapper.new schema: schema, rules: rules 
 names = [] 
 vendors.each do |url|
+	puts "trying url: " + url
 	data = mapper.data_from(url)
 	puts data[:name]
 	names << data[:name]
