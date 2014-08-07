@@ -23,13 +23,13 @@ class FlipkeyProfile.Routers.Profiles extends Backbone.Router
 		profiles = new FlipkeyProfile.Collections.Profiles()
 
 		$("#search_btn").click( -> 
-			url = $("#profile_input").val()
-			if url? and url != ""
+			name = $("#profile_input").val()
+			if name? and name != ""
 				showProgress(40)
 				profile = new FlipkeyProfile.Models.Profile()
 				profile.fetch(
 					type: 'GET',
-					data: {src: url},
+					data: {name: name},
 					success: =>
 						showProgress(60)
 						profiles.add(profile)

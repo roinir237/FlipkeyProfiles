@@ -35,6 +35,8 @@ gem 'diff-lcs'
 gem 'grape'
 
 gem 'backbone-on-rails'
+
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
