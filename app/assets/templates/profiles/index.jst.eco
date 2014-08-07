@@ -1,0 +1,51 @@
+<div class="side-details col-md-2">
+	<div class="row">
+		<img class="img-thumbnail" id="primary_photo" src="<%= @photo %>" />
+	</div>
+	<div class="row">
+		<div class="col-md-12" style="margin-top:5px;">
+			<address>
+				<strong><%= @details.location %></strong><br/>
+				<%= @details.phone_number %>
+			</address>
+		</div>
+	</div>
+</div>
+<div class="col-md-10">
+	<div class="row">
+		<div class="col-md-12">
+		<h3><%= @name %></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>
+				Overall
+			</h4>
+			</div>
+		<div class="col-md-10">
+		<% if @overall_rating != 0: %>
+			<% stars = Math.round(@overall_rating/20) %>
+			<% for i in [1..stars]: %>
+				<span class="star star-<%=i%> glyphicon glyphicon-star"></span>
+			<% end %>
+		<% else: %>
+			<span class="star">0 stars</span>
+		<% end %>
+		</div>
+	</div>
+	<% for rating in @rating_breakdown: %>
+		<div class="row">
+			<div class="col-md-2">
+				<%=rating.level%>
+			</div>
+			<div class="col-md-10">
+				<div class="progress">
+		  		<div class="progress-bar" role="progressbar" style="width:0px" aria-valuemin="0" aria-valuenow="<%=rating.rate%>%" aria-valuemax="100">
+		    		<span class="sr-only">60%</span>
+		    	</div>
+		  	</div>
+		  </div>
+  	</div>
+  <% end %>
+</div>

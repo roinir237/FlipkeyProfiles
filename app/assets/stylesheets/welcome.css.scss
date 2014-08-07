@@ -1,0 +1,225 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$star-size: 24px;
+
+@-webkit-keyframes star-2{ 
+	from { left: -$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@keyframes star-2{ 
+	from { left: -$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@-webkit-keyframes star-3{ 
+	from { left: -2*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@keyframes star-3{ 
+	from { left: -2*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@-webkit-keyframes star-4{ 
+	from { left: -3*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@keyframes star-4{ 
+	from { left: -3*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+
+@-webkit-keyframes star-5{ 
+	from { left: -4*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+@keyframes star-5{ 
+	from { left: -4*$star-size; -webkit-transform: rotate(180deg);} 
+	to { left: 0px; -webkit-transform: rotate(360deg); } 
+}
+
+@mixin timing-cubic {
+	-webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	-moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	-o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+
+@mixin transition-easeInOutCubic($prop, $duration) {
+	-webkit-transition: $prop $duration cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+   	-moz-transition: $prop $duration cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	-o-transition: $prop $duration cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition: $prop $duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+	-webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	-moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	-o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+
+body {
+	background:#EEE;
+}
+
+#site_wrapper{
+	padding: 0px;
+}
+
+#header {
+	text-align: center;
+	background-color: black;
+	background-image: url("http://www.flipkey.com/img/heroes/lg/homepage_1.jpg");
+	width: 100%;
+	padding: 50px;
+	color: white;
+	background-repeat: no-repeat;
+	background-position: top;
+	height: 300px;
+	-webkit-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+
+	h1{
+		font-size: 4.4em;
+		font-weight: normal;
+		text-shadow: 2px 2px 1px rgba(0,0,0,0.15);
+	}
+
+	.popout {
+		display: inline-block;
+		box-sizing: border-box; 
+		margin: 0 auto;
+		-webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+		box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+		background-color: rgba(255,255,255,0.7);
+		border-radius: 3px;
+		padding: 14px;
+	}
+
+	input {
+		width: 300px;
+		margin: 1px;
+		border: 1px solid #bbb;
+		padding: 0 8px;
+		background-color: white;
+		font-size: 16px;
+		height: 42px;
+		vertical-align: middle;
+		color: #444;
+		line-height: 1.25;
+
+	}:focus {
+		outline: none;
+		border-width: 2px;
+		border-color:#0074D9;
+		padding: 0 7px;
+		-webkit-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+	}
+
+	button {
+		text-decoration: none;
+		height: 42px;
+		vertical-align: middle;
+		padding: 8px 15px;
+		border: 1px solid;
+		border-radius: 2px 2px;
+		outline: 0;
+		font-size: 15px;
+		font-weight: normal;
+		text-align: center;
+		cursor: pointer;
+		display: inline-block;
+		background-color: #0075de;
+		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#FF007CE8',endColorstr='#FF006FD5');
+		background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#007ce8),color-stop(100%,#006fd5));
+		background-image: -webkit-linear-gradient(#007ce8,#006fd5);
+		background-image: -moz-linear-gradient(#007ce8,#006fd5);
+		background-image: -o-linear-gradient(#007ce8,#006fd5);
+		background-image: linear-gradient(#007ce8,#006fd5);
+		border-color: #066bc8;
+		color: white;
+		-webkit-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+		box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+	}
+}
+
+#loading_bar{
+	@include transition-easeInOutCubic(all,500ms);
+	width: 0;
+	height: 4px;
+	position: absolute;
+	background-color: #0074D9;
+}
+
+#primary_photo {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.profile {
+	background: white;
+	padding: 20px;
+	margin: 20px;
+}
+
+.progress {
+	margin-bottom: 5px;
+}
+
+.star {
+	font-size: $star-size;
+	color: #FFDC00;
+}
+
+.star-2 {
+	@include timing-cubic;
+	-webkit-animation: star-2 250ms;
+	animation: star-2 250ms;
+}
+
+.star-3 {
+	@include timing-cubic;
+	-webkit-animation: star-3 500ms;
+	animation: star-3 500ms;
+}
+
+.star-4 {
+	@include timing-cubic;
+	-webkit-animation: star-4 750ms;
+	animation: star-4 750ms;
+}
+
+.star-5 {
+	@include timing-cubic;
+	-webkit-animation: star-5 1000ms;
+	animation: star-5 1000ms;
+}
+
+.progress-bar {
+	@include transition-easeInOutCubic(width, 1000ms);
+}
+
+.side-details{
+	padding-top: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
