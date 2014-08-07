@@ -11,15 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap.min
+ *= require fonts
  *= require_tree .
  *= require_self
  */
-
- @font-face {
-  font-family: 'Glyphicons Halflings';
-  src: font-url('../assets/glyphicons-halflings-regular.eot');
-  src: font-url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       font-url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
-       font-url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
-       font-url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
