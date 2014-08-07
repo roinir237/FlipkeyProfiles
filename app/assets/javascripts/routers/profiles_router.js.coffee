@@ -28,7 +28,7 @@ class FlipkeyProfile.Routers.Profiles extends Backbone.Router
 				showProgress(40)
 				profile = new FlipkeyProfile.Models.Profile()
 				profile.fetch(
-					type: 'POST',
+					type: 'GET',
 					data: {src: url},
 					success: =>
 						showProgress(60)
