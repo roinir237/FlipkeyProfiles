@@ -17,5 +17,3 @@ production:
   encoding: unicode
   database: flipkey_production
   pool: 5
-  username: flipkey
-  password:
