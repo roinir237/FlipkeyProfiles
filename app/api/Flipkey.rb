@@ -7,21 +7,12 @@ module Flipkey
 		version 'v1', using: :path
   	format :json
 
-		desc "Save a vendors profile to the data base"
-		params do
-			requires :src, type: String, desc: "URL to vendor's flipkey profile"
-		end
-		post '/profile' do
-
-			# mapper = PageMapper.new schema: schema, rules: rules 
-			# mapper.data_from(params[:src])
-		end
-
 		params do
 			requires :name, type: String, desc: "The vendor's name"
 		end
 		get '/profile' do
-			Profile.where(name: params[:name]).first
+			p = Profile.where(name: params[:name]).first
+			if p.nil? then error! 'Not found', 404 else p end
 		end
 	end
 end

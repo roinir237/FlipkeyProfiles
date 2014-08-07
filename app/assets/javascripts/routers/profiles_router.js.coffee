@@ -30,6 +30,10 @@ class FlipkeyProfile.Routers.Profiles extends Backbone.Router
 				profile.fetch(
 					type: 'GET',
 					data: {name: name},
+					error: =>
+						endLoading()
+						alert("Not Found!")
+						
 					success: =>
 						showProgress(60)
 						profiles.add(profile)
